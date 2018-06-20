@@ -2,14 +2,19 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+#include <string>
+using std::string;
+#include <vector>
+using std::vector;
 
 int main()
 {
-    Blob<int> data{1, 2, 3, 6};
-    Blob<int>::size_type size = data.size();
-    decltype(size) i = 0;
-    for(i = 0; i != size; i++) {
-        cout << data[i] << " " << endl;
+    
+    vector<string> strvec = {"chen", "tong", "jie"};
+    Blob<string> nblob(strvec.begin(), strvec.end());
+    std::size_t size = nblob.size();
+    for(std::size_t i = 0; i != size; i++) {
+        cout << nblob[i] << " " << endl;
     }
     return 0;
 }
